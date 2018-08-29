@@ -1,0 +1,25 @@
+<resources>
+
+    <!--Commons-->
+    <string name="app_name">Connct</string> <!--ONLY USE AS STATIC TEXT FIELD-->
+    <string name="password">Password</string>
+
+    <!--LoginPage-->
+    <string name="email_username">Email or Username</string>
+    <string name="log_in">Log In</string> <!--Button-->
+
+    <!--SignUpPage-->
+    <string name="sign_up">Sign Up</string> <!--Static Text Field-->
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Re-enter Password</string>
+    <string name="finish">Finish</string> <!--Button-->
+
+
+    <string name="title_activity_main_interface">MainInterface</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_landingpage">landingpage</string>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EF8638</color>
+    <color name="colorPrimaryDark">#F4B242</color>
+    <color name="colorAccent">#EF8638</color>
+    <color name="connct_theme">#F4B242</color>
+    <color name="connct_white">#FFFFFF</color>
+    <color name="connct_button">#EF8638</color>
+</resources>
