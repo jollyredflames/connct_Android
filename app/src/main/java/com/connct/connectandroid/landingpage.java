@@ -36,6 +36,7 @@ public class landingpage extends AppCompatActivity {
                     selectedFrag = new ContactFragment();
                     break;
                 case R.id.navigation_personal:
+                    setTitle("Personal");
                     selectedFrag = new PersonalFragment();
                     break;
             }

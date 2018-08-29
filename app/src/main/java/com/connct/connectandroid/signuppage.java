@@ -10,22 +10,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.connct.connectandroid.loginpage;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthEmailException;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class signuppage extends AppCompatActivity {
 
@@ -119,11 +110,21 @@ public class signuppage extends AppCompatActivity {
                 });
     }
 
-    public void setUsernameAndInitialize(String username, String emailID, FirebaseUser refUser){
+    private void setUsernameAndInitialize(String username, String emailID, FirebaseUser refUser){
+        User newUser = new User(username, emailID);
+        String uid = refUser.getUid();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase.child("users").child(uid).child("profile").setValue(newUser);
+        mDatabase.child("users").child(uid).child("friends").setValue(null);
+        mDatabase.child("users").child(uid).child("requests").setValue(null);
+
+        /* Old Way
         Map<String, String> initialHit = new HashMap<String, String>();
         initialHit.put("username", username);
         initialHit.put("email", emailID);
         initialHit.put("phone", "");
+        initialHit.put("friends", "");
+        initialHit.put("requests", "");
         initialHit.put("facebook", "");
         initialHit.put("instagram", "");
         initialHit.put("twitter", "");
@@ -131,6 +132,7 @@ public class signuppage extends AppCompatActivity {
         String uid = refUser.getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mDatabase.child("users").child(uid).setValue(initialHit);
+        */
     }
 
 
